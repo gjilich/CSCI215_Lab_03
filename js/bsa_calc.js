@@ -19,6 +19,8 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform conversion calculations here
+      var weightkg = (weight * .454);
+      var heightcm = (height * 2.54);
 
     // -------------------------------
     // Body Surface Area (BSA)
@@ -28,6 +30,9 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BSA calculation here
+    var bsastep1 = (heightcm * weightkg);
+    var bsastep2 = (bsastep1 / 3600);
+        BSA =  Math.sqrt(bsastep2);
 
     // -------------------------------
     // Ideal Body Weight (IBW)
@@ -36,6 +41,9 @@ function calculate() {
     var IBW = 0;
 
     if ( female ) {
+          var ibwstep1 = (height - 60);
+          var ibwstep2 = (ibwstep1 * 2.3);
+          IBW = (ibwstep2 + 45.5);
 
         // ==========================================
         // Todo: Perform female IBW calculation here
@@ -45,6 +53,10 @@ function calculate() {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
+            var ibwstep1 = (height - 60);
+            var ibwstep2 = (ibwstep1 * 2.3);
+            IBW = (ibwstep2 + 50);
+
 
     }
 
@@ -56,7 +68,7 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BMI calculation here
-
+        BMI = weightkg / (heightcm/100*heightcm/100);
 
 
     // Do not modify this function call
